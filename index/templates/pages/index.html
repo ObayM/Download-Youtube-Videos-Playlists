@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Youtube videos & playlists</title>
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="{% static '/images/download.ico' %}" type="image/x-icon">
+</head>
+<body>
+    <div class="header">
+        <div class="icon">
+            <a href="#"><img src="{% static 'images/download.png' %}"></a>
+        </div>
+        <ul>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#Mp3-video">Mp3 video</a></li>
+            <li><a href="#Playlist">Playlist</a></li>
+        </ul>
+    </div>
+
+    <form method="POST">
+        {% csrf_token %}
+            <div class="name_url">
+                <label for="name_url">Url name</label>
+                <input name="name_url" type="text" required>        
+            </div>
+
+            <div class="path">
+                <label for="path">Your path</label>
+                <input name="path" type="text">
+                <!-- <i class="fa fa-search"></i>
+                <input type="file" id="get_file" style="display:none"> -->
+                <!-- <input type="submit" value="start"> -->
+            </div>
+
+            <div class="options">
+
+                <div class="type">
+                    <label for="type">Type</label>
+                    <select name="type" id="type" required>
+                        <option value="0">--------</option>
+                        <option value="1" required>Audio</option>
+                        <option value="2" required>Video</option>
+                        <option value="3" required>Video playlist</option>
+
+                    </select>
+                </div>
+            <div class="quality">
+                <label for="quality">Quality</label>
+                <select name="quality" id="quality" required>
+                    <option value="0">----</option>
+                    <option value="1" required>360p</option>
+                    <option value="2" required>720p</option>
+                </select>
+            </div>
+
+        </div>
+
+        <input type="submit" value="Download">
+
+    </form>
+
+
+
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

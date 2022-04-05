@@ -1,0 +1,141 @@
+:root{
+    --bg-main:linear-gradient(to right, #ef473a, #cb2d3e);
+    --transition-main:0.5s;
+    --text-bg: #333;
+    --text-color: #ffeb3b;
+
+}
+body{
+    background: var(--bg-main);
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.icon a img{
+    height: 48px;
+    transition: var(--transition-main);
+}
+
+.icon a img:hover{
+    transform: rotate(360deg);
+}
+
+.header ul{
+    list-style: none;
+}
+
+.header ul li{
+    display: inline-block;
+    padding: 0px 10px;
+}
+
+.header ul li a{
+    text-decoration: none;
+    color: #0ff;
+    background: #000000;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 13px 6px #0ff;
+    transition: var(--transition-main);
+
+}
+.header ul li a:hover{
+    box-shadow: 0px 0px 13px 6px #0ff;
+
+}
+
+
+
+
+form .name_url,
+form .path{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 
+form label[for="name_url"],
+form label[for="path"] */
+label{
+    border-radius: 10px;
+    background: var(--text-bg);
+    color: var(--text-color);
+    padding: 8px;
+    margin: 3px 10px;
+}
+
+
+form input[name="name_url"],
+form input[name="path"]{
+    
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    width: 300px;
+    padding: 6px;
+}
+
+input:focus,form .options select:focus{
+    
+    outline: none;
+}
+
+form input[value="start"]{
+    position: absolute;
+    left: 720px;
+}
+
+form i{
+    background-color: var(--text-bg);
+    color: var(--text-color);
+    padding: 4px;
+    border-radius: 7px;
+    text-align: center;
+    width: 20px;
+    height: 18px;
+    cursor: pointer;
+    margin: 2px 10px;
+    position: absolute;
+    left: 720px;
+}
+
+form #get_file{
+    display: none;
+}
+
+form .options{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+    align-items: center;
+}
+
+form .options select{
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #1e90ff;
+    padding: 0 10px;
+}
+
+form .options select option{
+    color: black;
+}
+
+form input[type="submit"]{
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color:indianred;
+    background-color: #333;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
